@@ -1,0 +1,24 @@
+<%- include('includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <main>
+        <form  method="POST" action="/search1">
+        <div class="col-md-6">
+            <h2>Search By Name</h2>
+                <input name="term" placeholder="Enter Name" id="name" class="typeahead" type="text" />
+        </div>
+        <div class="col-md-6">
+            <h2>Search By State</h2>
+                <input name="term" placeholder="Enter State" id="location" class="typeahead" type="text" />
+            </div>
+            <div class="col-md-12">
+            <center>
+            <button class="button" type="submit">Submit</button>
+        </center>
+    </div>
+        </form>
+    </main>
+    
+    <%- include('includes/end.ejs') %>

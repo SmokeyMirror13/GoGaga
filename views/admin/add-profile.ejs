@@ -1,0 +1,38 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+
+
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <main>
+            <form class="product-form" action="/admin/add-profile" method="POST">
+                <h2>Add Profile</h1>
+                    <input type="text" required name="name" id="name" placeholder="Full Name"><br>
+                    <input type="text" required name="location" class="typeahead" placeholder="Location">
+                    <button class="btn" type="submit">Add Profile</button>
+            </center>
+        </form>
+    </main>
+    <script>
+        var parsed_data = <%- JSON.stringify(sts) %>; 
+        console.log(parsed_data);
+        var states = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            local: parsed_data
+        });
+        $('.typeahead').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 2
+        },
+        {
+            name: 'states',
+            source: states,
+            limit: 5
+        })
+    </script>
+
+<%- include('../includes/end.ejs') %>

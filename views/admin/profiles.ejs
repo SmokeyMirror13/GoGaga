@@ -1,0 +1,25 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <table class="main_table"> 
+            <tbody>
+                <tr><h2>Profiles</h2></tr>  
+                <tr>
+                <th class="col-xs-6 col-md-6"><strong>Name</strong></th>
+                <th class="col-xs-6 col-md-6"><strong>State</strong></th>
+            </tr>
+            <% for(let profile of profiles) {%>
+                <tr>
+                    <td class="col-xs-6 col-md-6"><%= profile.name %></td>
+                    <td class="col-xs-6 col-md-6"><%= profile.location %></td>
+                </tr>
+                <% } %>
+                
+            </tbody>
+        </table>
+    </main>
+
+<%- include('../includes/end.ejs') %>
