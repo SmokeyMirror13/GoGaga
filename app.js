@@ -20,5 +20,5 @@ app.use(searchRoutes);
 
 app.use(errorController.get404);
 mongoConnect(() => {
-  app.listen(process.env.PORT||'3000');
+  app.listen(process.env.PORT || '3000');
 })

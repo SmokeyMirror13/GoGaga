@@ -1,5 +1,17 @@
 const Profile = require("../models/profile");
 
+exports.getIndex = (req, res, next) => {
+  Profile.fetchAll()
+    .then(profiles => {
+      res.render('index', {
+        profiles: profiles,
+        pageTitle: 'Home',
+        path: '/'
+      });
+    })
+    .catch(err => console.log(err));
+};
+
 exports.getSearchPage = (req, res, next) => {
   res.render("search1", {
     pageTitle: "Search",

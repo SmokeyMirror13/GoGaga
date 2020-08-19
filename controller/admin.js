@@ -1,5 +1,6 @@
 const Profile = require('../models/profile');
 const states = require('../utils/states.json');
+
 exports.getAddProfiles = (req, res, next) => {
     res.render('admin/add-profile', {
       pageTitle: 'Add Profile',
