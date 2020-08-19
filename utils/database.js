@@ -4,10 +4,8 @@ const MongoClient = mongodb.MongoClient;
 
 let _db;
 
-const uri = 'mongodb+srv://admin:admin@cluster0.ndbbb.gcp.mongodb.net/gogaga?retryWrites=true&w=majority';
-
 const mongoConnect = (callback) => {
-  MongoClient.connect(uri)
+  MongoClient.connect(process.env.MONGODB_URI||'mongodb+srv://admin:admin@cluster0.ndbbb.gcp.mongodb.net/gogaga?retryWrites=true&w=majority')
   .then(client => {
     console.log('Connnected');
     _db = client.db();
